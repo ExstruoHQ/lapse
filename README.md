@@ -3,7 +3,7 @@
 게임을 실행하고, 화면 앞에 있던 시간만 기록하는 Windows 앱. — [Exstruo](https://exstruohq.github.io/)
 
 - 사이트: https://exstruohq.github.io/lapse/
-- 다운로드: [최신 버전 받기](https://github.com/ExstruoHQ/lapse/releases/latest)
+- 다운로드: [LapseSetup.exe 받기](https://exstruohq.github.io/lapse/downloads/LapseSetup.exe) · [버전별 변경 내역](https://github.com/ExstruoHQ/lapse/releases)
 
 Windows 10 / 11 · 무료 · 광고 없음 · 가입 없음
 
