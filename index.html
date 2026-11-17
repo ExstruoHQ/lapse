@@ -50,9 +50,17 @@ a { color: inherit; }
 .wide { font-family: var(--wide); font-stretch: 125%; text-transform: uppercase; }
 .cap { font-family: var(--wide); font-stretch: 125%; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--mute); font-weight: 500; }
 
+/* ---------- 맨 위 회사 막대 (Exstruo · Lapse · Pulse) */
+.xbar { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; height: 32px; z-index: 25; background: rgba(0, 0, 0, .82); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(255, 255, 255, .06); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", "GM", sans-serif; font-size: 12px; letter-spacing: 0; }
+.xbar .wrap { display: flex; align-items: center; gap: 22px; height: 100%; }
+.xbar a { color: rgba(255, 255, 255, .62); text-decoration: none; transition: color .2s; }
+.xbar a:hover, .xbar a[aria-current] { color: #fff; }
+.xbar .x { display: flex; align-items: center; gap: 7px; color: #fff; font-weight: 600; margin-right: auto; }
+.xbar .x svg { width: 14px; height: 14px; }
+
 /* ---------- 상단 */
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); }
-.top { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 10; mix-blend-mode: difference; }
+.top { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 32px); left: 0; right: 0; z-index: 10; mix-blend-mode: difference; }
 .top .wrap { display: flex; align-items: center; height: 72px; gap: 40px; }
 .mark { font-family: var(--wide); font-stretch: 125%; font-weight: 700; letter-spacing: .32em; font-size: 13px; text-decoration: none; color: #fff; }
 .nav { display: flex; gap: 32px; margin-left: auto; }
@@ -254,12 +262,27 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   .top .wrap { gap: 18px; }
   .hero .meta { flex-wrap: wrap; row-gap: 6px; }
 }
+/* ---------- 3.2 새 소식 · 실제 앱 화면 */
+.app.real { display: block; background: #191919; }
+.app.real img { display: block; width: 100%; height: auto; }
+.news-note { color: var(--mute); margin-top: 34px; max-width: 60ch; }
+.news-note b { color: var(--ink); font-weight: 500; }
+html[lang="ko"] .block h2, html[lang="ko"] .hero h1 { word-break: keep-all; }
 </style>
+
+<div class="xbar">
+  <div class="wrap">
+    <a class="x" href="https://exstruohq.github.io/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="15" width="18" height="5" rx="2.5" fill="#fff"/><rect x="6" y="9" width="12" height="5" rx="2.5" fill="#fff" opacity=".7"/><rect x="9" y="3" width="6" height="5" rx="2.5" fill="#fff" opacity=".4"/></svg>Exstruo</a>
+    <a href="https://exstruohq.github.io/lapse/" aria-current="page">Lapse</a>
+    <a href="https://exstruohq.github.io/pulse/">Pulse</a>
+  </div>
+</div>
 
 <header class="top">
   <div class="wrap">
     <a class="mark" href="#top">LAPSE</a>
     <nav class="nav" aria-label="페이지 안 이동">
+      <a href="#new">New</a>
       <a href="#record">Record</a>
       <a href="#features">Features</a>
       <a href="#stats">Stats</a>
@@ -284,7 +307,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
         <div class="side">
           <p data-en="Launch every game from one place, and keep only the time you actually spent in front of the screen.">어디서 켠 게임이든 한곳에서 실행하고, 화면 앞에 있던 시간만 남기는 Windows 앱.</p>
           <a class="get js-dl" href="#install"><span class="js-dl-label">Download for Windows</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13m0 0 5-5m-5 5-5-5M5 21h14"/></svg></a>
-          <span class="cap">v3.1 · Windows 10 / 11 · Free</span>
+          <span class="cap">v3.2 · Windows 10 / 11 · Free</span>
         </div>
       </div>
     </div>
@@ -292,34 +315,27 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
   <div class="stage">
     <div class="wrap">
-      <div class="app" id="app" role="img" aria-label="Lapse 라이브러리 화면 예시">
-        <div class="lights"><i></i><i></i><i></i></div>
-        <aside class="side-nav">
-          <div class="brand"><img src="logo.png" alt="">Lapse</div>
-          <div class="nv on"><span>전체</span><span>12</span></div>
-          <div class="nv"><span>게임</span><span>10</span></div>
-          <div class="nv"><span>앱</span><span>2</span></div>
-          <div class="nv"><span>즐겨찾기</span><span>3</span></div>
-          <div class="nv"><span>통계</span><span></span></div>
-          <div class="cap">Collections</div>
-          <div class="nv"><span>주말 게임</span><span>4</span></div>
-          <div class="cap">Now playing</div>
-          <div class="np"><div class="art a1"></div><div><b>Starfall Sonata</b><span class="js-session">1:12:08</span></div></div>
-        </aside>
-        <div class="main">
-          <h3>라이브러리</h3>
-          <p class="sub"><b>12</b>개 · 총 <b>612</b>시간 <b>40</b>분 플레이</p>
-          <div class="cards">
-            <div class="card"><div class="cover"><div class="art a1"></div><span class="badge"><i></i>플레이 중</span><span class="nm">Starfall Sonata</span></div><b>Starfall Sonata</b><small class="live">플레이 중</small></div>
-            <div class="card"><div class="cover"><div class="art a2"></div><span class="nm">Ember Road</span></div><b>Ember Road</b><small><span class="num">214</span>시간 · 어제</small></div>
-            <div class="card"><div class="cover"><div class="art a3"></div><span class="nm">Tidewalker</span></div><b>Tidewalker</b><small><span class="num">98</span>시간 · 3일 전</small></div>
-            <div class="card"><div class="cover"><div class="art a4"></div><span class="nm">Pocket Kart</span></div><b>Pocket Kart</b><small><span class="num">41</span>시간 · 1주 전</small></div>
-            <div class="card"><div class="cover"><div class="art a5"></div><span class="nm">Quiet Orbit</span></div><b>Quiet Orbit</b><small><span class="num">17</span>시간 · 2주 전</small></div>
-          </div>
-        </div>
+      <div class="app real" id="app">
+        <img src="shot-library.png" width="1220" height="800" alt="Lapse 3.2 라이브러리 화면 — 유리 사이드바와 게임 카드" data-en-alt="Lapse 3.2 library screen with the glass sidebar and game cards">
       </div>
     </div>
   </div>
+
+  <!-- 3.2 새 소식 -->
+  <section class="block" id="new">
+    <div class="wrap">
+      <span class="cap">What's new · v3.2</span>
+      <h2 data-en="Redrawn in liquid glass.">리퀴드 글래스로 새로 그렸습니다.</h2>
+      <div class="lines">
+        <div class="line"><div class="t">Glass</div><p data-en-html="Every surface is now a pane of glass, just like Pulse. The sidebar <b>floats inside the window</b>, and cards, menus, the edit sheet and notifications all get a light-catching rim and a soft shadow.">화면 전체를 Pulse와 같은 유리로 바꿨습니다. 사이드바는 <b>창 안에 떠 있는 유리판</b>이 되고, 카드 · 메뉴 · 편집 창 · 알림까지 빛이 맺히는 테두리와 부드러운 그림자를 입었습니다.</p></div>
+        <div class="line"><div class="t">Sidebar</div><p data-en-html="A colour tile for every menu, and a <b>glass highlight that glides</b> to the one you pick. The window buttons moved to the top left, Mac-style — Snap Layouts on the green one still work.">메뉴마다 색 타일 아이콘, 고른 메뉴로 <b>미끄러져 가는 유리 선택 표시</b>. 창 버튼은 맥처럼 왼쪽 위로 옮겼고, 초록 버튼의 스냅 레이아웃도 그대로 됩니다.</p></div>
+        <div class="line"><div class="t">Motion</div><p data-en-html="Buttons <b>squeeze when pressed and spring back</b>. The segmented control's thumb stretches a little as it slides, and switches are now glass capsules.">버튼은 누르면 <b>꾹 눌렸다가 탄력 있게</b> 돌아옵니다. 선택 버튼의 손잡이는 미끄러지며 살짝 늘어나고, 스위치도 유리 캡슐로 바뀌었습니다.</p></div>
+        <div class="line"><div class="t">Backdrop</div><p data-en-html="On Windows 11 the desktop behind the window <b>shows through, softly blurred</b>. Turn it on or off in Settings.">Windows 11에서는 창 뒤 바탕화면이 <b>흐릿하게 비치는</b> 반투명 배경을 씁니다. 설정에서 끄고 켤 수 있습니다.</p></div>
+        <div class="line"><div class="t">Settings</div><p data-en-html="Grouped into cards with fine dividers. <b>Idle timeout and animation speed</b> are now segmented controls.">항목마다 묶은 카드와 가는 구분선으로 정리했습니다. <b>멈추기까지 · 애니메이션 속도</b>는 선택 버튼으로 바꿨습니다.</p></div>
+      </div>
+      <p class="news-note" data-en-html="The record file format hasn't changed. <b>Install 3.2 over 3.1</b> and your playtime and settings stay exactly as they were.">기록 파일 형식은 그대로입니다. <b>3.1 위에 3.2를 덮어 설치</b>해도 플레이 기록과 설정이 그대로 남습니다.</p>
+    </div>
+  </section>
 
   <!-- 모래시계: 스크롤하는 만큼 모래가 떨어지고, 기록 규칙이 하나씩 밝아진다 -->
   <section class="glass" id="record">
@@ -384,7 +400,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <div class="install">
         <div>
           <dl class="spec">
-            <div><dt>Version</dt><dd>3.1</dd></div>
+            <div><dt>Version</dt><dd>3.2</dd></div>
             <div><dt>File</dt><dd>LapseSetup.exe · 9MB</dd></div>
             <div><dt>System</dt><dd data-en="Windows 10 · 11 (64-bit)">Windows 10 · 11 (64비트)</dd></div>
             <div><dt>Price</dt><dd data-en="Free · No ads · No sign-up">무료 · 광고 없음 · 가입 없음</dd></div>
@@ -421,7 +437,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   <section class="closing">
     <div class="big" id="big" aria-hidden="true">LAPSE <span>LAPSE</span> LAPSE <span>LAPSE</span></div>
     <div class="wrap foot">
-      <span class="cap">© 2026 NightShift Lab</span>
+      <span class="cap">© 2026 Exstruo</span>
       <span class="cap">Type · Archivo · Gmarket Sans · Geist</span>
     </div>
   </section>
@@ -429,7 +445,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 <script>
   // 설치 파일을 올린 주소를 여기에 넣으면 다운로드 버튼이 그 주소로 바로 연결됩니다.
-  const DOWNLOAD_URL = "https://github.com/nightshiftlabHQ/lapse/releases/latest/download/LapseSetup.exe";
+  const DOWNLOAD_URL = "https://github.com/ExstruoHQ/lapse/releases/latest/download/LapseSetup.exe";
   document.querySelectorAll(".js-dl").forEach((a) => {
     if (DOWNLOAD_URL) {
       a.href = DOWNLOAD_URL;

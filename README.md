@@ -1,14 +1,24 @@
 # Lapse
 
-게임을 실행하고, 화면 앞에 있던 시간만 기록하는 Windows 앱.
+게임을 실행하고, 화면 앞에 있던 시간만 기록하는 Windows 앱. — [Exstruo](https://exstruohq.github.io/)
 
-- 사이트: https://nightshiftlabhq.github.io/lapse/
-- 다운로드: [최신 버전 받기](https://github.com/nightshiftlabHQ/lapse/releases/latest)
+- 사이트: https://exstruohq.github.io/lapse/
+- 다운로드: [최신 버전 받기](https://github.com/ExstruoHQ/lapse/releases/latest)
 
 Windows 10 / 11 · 무료 · 광고 없음 · 가입 없음
+
+## 3.2 — 리퀴드 글래스
+
+- 화면 전체를 Pulse와 같은 유리 디자인으로: 창 안에 떠 있는 유리 사이드바, 유리 카드 · 메뉴 · 편집 창 · 알림
+- 메뉴마다 색 타일 아이콘, 고른 메뉴로 미끄러지는 유리 선택 표시
+- 창 버튼(신호등)을 맥처럼 왼쪽 위로 (초록 버튼의 스냅 레이아웃은 그대로)
+- 누르면 꾹 눌렸다가 탄력 있게 돌아오는 버튼, 늘어나며 미끄러지는 선택 버튼, 유리 캡슐 스위치
+- Windows 11에서 창 뒤가 흐릿하게 비치는 반투명 배경 (설정에서 끄고 켜기)
+- 설정 화면을 묶음 카드와 가는 구분선으로 정리, '멈추기까지' · '애니메이션 속도'는 선택 버튼으로
+- 기록 파일 형식은 그대로 — 3.1 위에 덮어 설치해도 기록과 설정 유지
 
 처음 실행할 때 "Windows의 PC 보호" 창이 뜨면 **추가 정보 → 실행**을 누르세요. 아직 코드 서명이 없는 개인 앱이라 처음 한 번 뜹니다.
 
 글꼴: Archivo (SIL Open Font License 1.1), G마켓 산스 (자유 사용 · 재배포 허용)
 
-© 2026 NightShift Lab
+© 2026 Exstruo
